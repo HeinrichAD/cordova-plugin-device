@@ -65,6 +65,7 @@ Get the version of Cordova running on the device.
 - Android
 - BlackBerry 10
 - Browser
+- Electron
 - Firefox OS
 - iOS
 - Tizen
@@ -83,6 +84,7 @@ different across versions of the same product.
 - Android
 - BlackBerry 10
 - Browser
+- Electron
 - iOS
 - Tizen
 - Windows Phone 7 and 8
@@ -97,6 +99,7 @@ different across versions of the same product.
 // BlackBerry: Torch 9800      returns "9800"
 // Browser:    Google Chrome   returns "Chrome"
 //             Safari          returns "Safari"
+// Electron:   Windows         returns "win32"; More see https://nodejs.org/api/os.html#os_os_platform
 // iOS:     for the iPad Mini, returns iPad2,5; iPhone 5 is iPhone 5,1. See http://theiphonewiki.com/wiki/index.php?title=Models
 // OSX:                        returns "x86_64"
 //
@@ -127,6 +130,7 @@ var string = device.platform;
 - Android
 - BlackBerry 10
 - Browser
+- Electron
 - Firefox OS
 - iOS
 - Tizen
@@ -141,6 +145,7 @@ var string = device.platform;
 //   - "Android"
 //   - "BlackBerry 10"
 //   - "browser"
+//   - "electron"
 //   - "iOS"
 //   - "WinCE"
 //   - "Tizen"
@@ -172,6 +177,7 @@ The details of how a UUID is generated are determined by the device manufacturer
 
 - Android
 - BlackBerry 10
+- Electron
 - iOS
 - Tizen
 - Windows Phone 7 and 8
@@ -186,6 +192,8 @@ The details of how a UUID is generated are determined by the device manufacturer
 //
 // BlackBerry: Returns the PIN number of the device
 //             This is a nine-digit unique integer (as a string, though!)
+//
+// Electron: Return machine/device Universally Unique IDentifier (UUID). See https://github.com/albertsgrc/machine-uuid-sync
 //
 // iPhone: (Paraphrased from the UIDevice Class documentation)
 //         Returns the [UIDevice identifierForVendor] UUID which is unique and the same for all apps installed by the same vendor. However the UUID can be different if the user deletes all apps from the vendor and then reinstalls it.
@@ -225,6 +233,7 @@ Get the operating system version.
 - Android 2.1+
 - BlackBerry 10
 - Browser
+- Electron
 - iOS
 - Tizen
 - Windows Phone 7 and 8
@@ -241,6 +250,8 @@ Get the operating system version.
 // BlackBerry: Torch 9800 using OS 6.0 would return "6.0.0.600"
 //
 // Browser:    Returns version number for the browser
+//
+// Electron:   Returns a string identifying the operating system release. See https://nodejs.org/api/os.html#os_os_release
 //
 // iPhone:     iOS 3.2 returns "3.2"
 //
@@ -288,14 +299,15 @@ var isSim = device.isVirtual;
 
 - Android 2.1+
 - Browser
+- Electron
 - iOS
 - Windows Phone 8
 - Windows
 - OSX
 
-### OSX and Browser Quirk
+### OSX, Browser and Electron Quirk
 
-The `isVirtual` property on OS X and Browser always returns false.
+The `isVirtual` property on OS X, Browser and Electron always returns false.
 
 ## device.serial
 

@@ -18,6 +18,7 @@
       "windows8",
       "windows",
       "browser",
+      "electron",
       "osx"
     ]
   },
@@ -44,6 +45,7 @@
     "cordova-windows8",
     "cordova-windows",
     "cordova-browser",
+    "cordova-electron",
     "cordova-osx"
   ],
   "scripts": {
@@ -67,5 +69,9 @@
     "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "machine-uuid-sync": "^1.0.9",
+    "os": "^0.1.1"
   }
 }

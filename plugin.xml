@@ -160,6 +160,19 @@
         </js-module>
     </platform>
 
+    <!-- electron -->
+    <platform name="electron">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Device">
+                <param name="electron-package" value="Device" />
+            </feature>
+        </config-file>
+
+        <js-module src="src/electron/DeviceProxy.js" name="DeviceProxy">
+            <runs />
+        </js-module>
+    </platform>
+
     <!-- osx -->
     <platform name="osx">
         <config-file target="config.xml" parent="/*">
